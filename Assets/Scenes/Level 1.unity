@@ -236,10 +236,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 54605266281542934, guid: 13c0b2803bfee7a4ea3cf92973859ba7,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 56
+      objectReference: {fileID: 0}
     - target: {fileID: 114381772283072246, guid: 13c0b2803bfee7a4ea3cf92973859ba7,
         type: 2}
-      propertyPath: rcsThrust
-      value: 100
+      propertyPath: m_rcsThrust
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 114381772283072246, guid: 13c0b2803bfee7a4ea3cf92973859ba7,
+        type: 2}
+      propertyPath: m_mainThrust
+      value: 800
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13c0b2803bfee7a4ea3cf92973859ba7, type: 2}

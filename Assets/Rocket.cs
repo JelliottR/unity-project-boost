@@ -8,6 +8,7 @@ public class Rocket : MonoBehaviour
     private AudioSource m_audioSource;
 
     [SerializeField] float m_rcsThrust = 100f;
+    [SerializeField] float m_mainThrust = 800f;
 
     // Use this for initialization
     void Start()
@@ -27,7 +28,8 @@ public class Rocket : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            m_rigidBody.AddRelativeForce(Vector3.up);
+            float thrustThisFrame = m_mainThrust * Time.deltaTime;
+            m_rigidBody.AddRelativeForce(Vector3.up * thrustThisFrame);
 
             if (!m_audioSource.isPlaying)
             {
