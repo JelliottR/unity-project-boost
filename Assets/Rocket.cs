@@ -7,6 +7,8 @@ public class Rocket : MonoBehaviour
     private Rigidbody m_rigidBody;
     private AudioSource m_audioSource;
 
+    [SerializeField] float m_rcsThrust = 100f;
+
     // Use this for initialization
     void Start()
     {
@@ -42,14 +44,15 @@ public class Rocket : MonoBehaviour
     {
 
         m_rigidBody.freezeRotation = true; // Take manual control of the rotation.
+        float rotationThisFrame = m_rcsThrust * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.forward);
+            transform.Rotate(Vector3.forward * rotationThisFrame);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.forward);
+            transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
 
         m_rigidBody.freezeRotation = false; // Resume physics control of rotation.
